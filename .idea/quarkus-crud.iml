@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="AdditionalModuleElements">
+    <content url="file://$MODULE_DIR$" />
+  </component>
+  <component name="Quarkus Tools">
+    <option name="hash" value="1137791384" />
+    <option name="version" value="1" />
+  </component>
+</module>
