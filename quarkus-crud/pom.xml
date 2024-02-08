@@ -21,6 +21,7 @@
     </properties>
     <dependencyManagement>
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.redisson/redisson -->
             <dependency>
                 <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-jackson</artifactId>
@@ -30,9 +31,11 @@
                 <artifactId>ignite-core</artifactId>
                 <version>2.7.6</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/io.quarkus/quarkus-redis-client -->
             <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-redis-client</artifactId>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>3.20.0</version>
             </dependency>
             <dependency>
                 <groupId>io.quarkus</groupId>
@@ -60,6 +63,15 @@
             <groupId>org.apache.ignite</groupId>
             <artifactId>ignite-core</artifactId>
             <version>2.7.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-redis-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.20.0</version>
         </dependency>
     </dependencies>
     <build>
