@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 
 @ApplicationScoped
-public class RedisClient {
+public class RedisClient implements GenericCacheClient{
 
     @Inject
     RedissonClient redissonClient;

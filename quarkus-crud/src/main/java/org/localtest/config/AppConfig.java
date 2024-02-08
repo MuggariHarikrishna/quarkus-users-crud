@@ -32,23 +32,6 @@ public class AppConfig {
         ClientConfiguration cfg = new ClientConfiguration().setAddresses(apacheIgniteUrl);
         IgniteClient client = Ignition.startClient(cfg);
         return client;
-
-        /*TcpDiscoveryVmIpFinder tcpDiscoveryFinder = new TcpDiscoveryVmIpFinder();
-        String[] addresses = {apacheIgniteUrl};
-        tcpDiscoveryFinder.setAddresses(Arrays.asList(addresses));
-        TcpDiscoverySpi discoSpi = new TcpDiscoverySpi();
-        discoSpi.setIpFinder(tcpDiscoveryFinder);
-
-        CacheConfiguration cacheConfiguration = new CacheConfiguration();
-        cacheConfiguration.setName(CACHE_NAME);
-        cacheConfiguration.setEagerTtl(true);
-        cacheConfiguration.setExpiryPolicyFactory(CreatedExpiryPolicy.factoryOf(new Duration(TimeUnit.SECONDS, Long.valueOf(cacheDuration))));
-        IgniteConfiguration igniteConfiguration = new IgniteConfiguration();
-        igniteConfiguration.setCacheConfiguration(cacheConfiguration);
-        igniteConfiguration.setDiscoverySpi(discoSpi);
-        Ignition.start(igniteConfiguration);
-        Ignition.setClientMode(true);
-        return Ignition.start(igniteConfiguration);*/
     }
 
     @Produces

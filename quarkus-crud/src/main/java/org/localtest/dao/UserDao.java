@@ -19,41 +19,21 @@ public class UserDao {
     @Inject
     RedisClient redisClient;
 
-//    @Inject
-//    @DefaultBean
-//    GenericCacheClient genericCacheClient;
 
     public String getUserById(int userId) throws UserNotFoundException {
-        if (cacheClient.equalsIgnoreCase(AppConstants.CACHE_APACHE_IGNITE)) {
-            return apacheIgniteClient.getUserById(userId);
-        } else {
-            return redisClient.getUserById(userId);
-        }
-//        return getClient().getUserById(userId);
+        return getClient().getUserById(userId);
     }
 
     public Boolean delete(int userId) {
-        if (cacheClient.equalsIgnoreCase(AppConstants.CACHE_APACHE_IGNITE)) {
-            return apacheIgniteClient.delete(userId);
-        } else {
-            return redisClient.delete(userId);
-        }
-//        return getClient().delete(userId);
+        return getClient().delete(userId);
     }
 
     public void saveOrUpdate(int userId, String userName) {
-        if (cacheClient.equalsIgnoreCase(AppConstants.CACHE_APACHE_IGNITE)) {
-            apacheIgniteClient.saveOrUpdate(userId, userName);
-        } else {
-            redisClient.saveOrUpdate(userId, userName);
-        }
-//        getClient().saveOrUpdate(userId, userName);
+        getClient().saveOrUpdate(userId, userName);
     }
 
-  /*  public GenericCacheClient getClient() {
+    public GenericCacheClient getClient() {
         GenericCacheClient genericCacheClient = apacheIgniteClient;
-        System.out.println("apacheIgniteClient :: " + apacheIgniteClient);
-        System.out.println("cacheClient :: " + cacheClient);
         switch (cacheClient) {
             case AppConstants.CACHE_REDIS: {
                 genericCacheClient = redisClient;
@@ -61,5 +41,5 @@ public class UserDao {
             }
         }
         return genericCacheClient;
-    }*/
+    }
 }

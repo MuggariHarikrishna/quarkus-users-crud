@@ -8,7 +8,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @ApplicationScoped
-public class ApacheIgniteClient {
+public class ApacheIgniteClient implements GenericCacheClient{
 
     @Inject
     IgniteClient igniteClient;
